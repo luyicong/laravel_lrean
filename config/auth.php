@@ -36,9 +36,10 @@ return [
     */
 
     'guards' => [
+        //设置用户认证指向admins模型
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'admins',
         ],
 
         'api' => [
@@ -65,6 +66,11 @@ return [
     */
 
     'providers' => [
+        //
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Model\Admin::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
