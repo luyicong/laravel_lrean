@@ -22,7 +22,8 @@
             <header class="panel-heading text-center">
                 <strong>管理员后台登陆</strong>
             </header>
-            <form method="post" action="/" class="panel-body wrapper-lg">
+            <form method="post" action="" class="panel-body wrapper-lg">
+                {{ csrf_field() }}
                 <div class="form-group">
                     <label class="control-label">用户名</label>
                     <input required type="text" class="form-control input-lg" name="username">
@@ -36,6 +37,9 @@
                     {{--<input type="text"  class="form-control input-lg col-md-6" name="code">--}}
                     {{--<img src="" onclick="this.src=this.src+'&'+Math.random()">--}}
                 {{--</div>--}}
+                @if(session('error'))
+                    <div class="alert alert-danger" role="alert">{{session('error')}}</div>
+                @endif
                 <button type="submit" class="btn btn-primary">登陆后台</button>
             </form>
         </section>

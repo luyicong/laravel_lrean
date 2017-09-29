@@ -37,7 +37,7 @@ return [
 
     'guards' => [
         //设置用户认证指向admins模型
-        'web' => [
+        'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
